@@ -259,3 +259,59 @@
 
 
 
+// Else
+// function testElse(value){
+//     if(value <= 5){
+//         return "Lessthan 5";
+//     }else {
+//        return "Greater Than 5"
+//     }
+// }
+// console.log(testElse(4));
+
+
+// Else if
+// function testElseIf(value){
+//     if(value >= 10){
+//         return "more 10";
+//     }else if(value <= 5){
+//        return "Less than 5"
+//     }else {
+//         return "Between 5 and 10"
+//     }
+// }
+// console.log(testElseIf(6));
+
+
+// Logical order in If statement 
+// function testLOGIC(value){
+//     if(value < 5){
+//         return "LessThan 5";
+//     }else if(value < 10){
+//        return "Less Than 10"
+//     }else {
+//         return "More than 10"
+//     }
+// }
+// console.log(testLOGIC(6));
+
+
+// Chaining if else statements
+// function testSize(num){
+//     if (num < 5) {
+//         return "Tiny"
+//     }else if(num < 10){
+//         return "Small"
+//     }else if(num < 15){
+//         return "Medium"
+//     }else if(num < 20){
+//         return "Large"
+//     }else{
+//         return "Huge"
+//     }
+// }
+// console.log(testSize(2));
+
+
+// Golf Code
+
