@@ -138,6 +138,25 @@
 // console.log(friendsData[0].name);
 
 
+// Nested Objects
+// var myStorage = {
+//     "users":{
+//         "cars":{
+//             "name":"GLI",
+//             "model":"Hunda"
+//         },
+//         "bikes":{
+//             "name":"OneTwo5",
+//             "model":"Hunda"
+//         },
+//     }
+// }
+// var globalvar = myStorage.users.cars.name;
+// console.log(globalvar);
+
+
+
+
 
 
 

@@ -55,3 +55,21 @@
 // console.log(mylist);
 
 
+// Nested Array
+var myPlants = [
+    {
+        type:"flower",
+        list:[
+            "sun",
+            "moon",
+        ]
+    },
+    {
+        type:"tree",
+        list:[
+            "sun",
+            "moon",
+        ]
+    },
+];
+console.log(myPlants[0].list[0]);
