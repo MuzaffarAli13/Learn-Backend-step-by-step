@@ -124,10 +124,10 @@
 // Data
 
 
-const SHOPING_LIST = [];
+// const SHOPING_LIST = [];
 
 
-SHOPING_LIST.unshift("Apples","Bannas","Mangos");
+// SHOPING_LIST.unshift("Apples","Bannas","Mangos");
 // let item_removed = SHOPING_LIST.pop();
 // console.log(item_removed);
 // console.log(SHOPING_LIST);
@@ -137,7 +137,78 @@ SHOPING_LIST.unshift("Apples","Bannas","Mangos");
 
 
 
+// Quiz
+// let a = 5;
+// let b = ++a;
+// console.log(a + b);
+
+
+// let x = 5 /2;
+// console.log(typeof(x)); Number
 
 
 
+// let name = "muzaffar";
+
+// function logIn(val){
+   
+//     return val === name? "LoggedIn" : "WrongName";
+// };
+
+// console.log(logIn("Muzaffar"));
+
+
+
+
+// function checkVal(val){
+//      let answer = "";
+//     switch(val){
+//         case 1:
+//         case 2:
+//         case 3:
+//             answer = "Low";
+//             break;
+//         case 4:
+//         case 5:
+//         case 6:
+//             answer = "Mid";
+//             break;
+//         case 7:
+//         case 8:
+//         case 9:
+//             answer = "high";
+//             break;
+//         default :
+//              answer = "Try Again";
+//              break;
+//     }
+//     return answer
+// };
+// console.log(checkVal(8));
+
+let  my_data = [
+    {
+    name:"Muzaffar",
+    id:"828392",
+    score:90
+    },
+     {
+    name:"khan",
+    id:"8392",
+    score:97
+    },
+     {
+    name:"Zaffar",
+    id:"828",
+    score:97
+    },
+
+]
+
+let data = ()=>{
+    let res = my_data
+   return res.length > 0 ? res : "Data Not Found" ; 
+};
+
+console.log(data());
 
