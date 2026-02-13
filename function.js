@@ -248,19 +248,85 @@
 // console.log(greeting);
 
 // Challenge
-let result = {
-    failure:["No var","Var on Top","Line Break"],
-    succes:["Done","underine","Bold"]
-};
+// let result = {
+//     failure:["No var","Var on Top","Line Break"],
+//     succes:["Done","underine","Bold"]
+// };
 
-function makeList(list){
-  let resultData = [];
-  for(let i=0; i < list.length ; i++){
-    resultData.push(`<li class="text-warning">${list[i]}</li>`)
-  };
-  return resultData
-}
+// function makeList(list){
+//   let resultData = [];
+//   for(let i=0; i < list.length ; i++){
+//     resultData.push(`<li class="text-warning">${list[i]}</li>`)
+//   };
+//   return resultData
+// }
 
-let res = makeList(result.failure);
-console.log(res);
+// let res = makeList(result.failure);
+// console.log(res);
 
+
+
+// Simple Fields
+// function createPerson(name,age,gender){
+//     return {
+//         name:name,
+//         age:age,
+//         gender:gender
+//     }
+// };
+// console.log(createPerson("Muzaffar Ali",20,"male"));
+// let createPerson = (name,age,gender)=>({
+//        name,age,gender
+//     })
+// console.log(createPerson("Muzaffar Ali",20,"male"));
+
+
+
+// Wrte Concise Declarative functions
+// let car = {
+//     gear:2,
+//     setGear(newGear){
+//         this.gear = newGear;
+//     }
+// }
+// car.setGear(5);
+// console.log(car.gear);
+
+
+
+// use class syntex to define a cnstructor function
+// function makeClass(){
+//     class Vagetables{
+//         constructor(name){
+//             this.name = name;
+//         }
+//     }
+//     return Vagetables
+// };
+// const vagetable = makeClass();
+// const carrot = new vagetable("carrot");
+// console.log(carrot);
+
+
+// use getters and setters to control acces to an object
+// function makeClass(){
+//   class Thermstate{
+//      constructor(temp){
+//         this._temp = 5 / 2 * (temp - 32)
+//      }
+//      get temprechure(){
+//         return this._temp
+//      }
+//      set temprechure(updatedTemp){
+//         this._temp = updatedTemp
+//      }
+//   }
+//   return Thermstate
+// };
+// let Thermstate = makeClass();
+// let them = new Thermstate(26);
+// let tem = them.temprechure
+// console.log(tem);
+
+
+// Understand Between import and requird
