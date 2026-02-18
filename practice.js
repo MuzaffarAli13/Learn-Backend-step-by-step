@@ -305,14 +305,178 @@ let dashes = "----------------------------";
 
 
 
-const fruits = ["mango", "apple", "banana"];
+// const fruits = ["mango", "apple", "banana"];
 
-// old (loop)
-// for (let i = 0; i < fruits.length; i++) {
-//     console.log(fruits[i]);
+// // old (loop)
+// // for (let i = 0; i < fruits.length; i++) {
+// //     console.log(fruits[i]);
+// // }
+
+// // new way — forEach
+// fruits.forEach((fruit)=>{
+//     console.log(fruit);
+// })
+
+
+
+// String Methods
+// const STR = "Hello World javaScirpt";
+// console.log("length ", STR.length);
+// console.log("toLowerCase ", STR.toLowerCase());
+// console.log("toUpperCase ", STR.toUpperCase());
+// console.log("includes ", STR.includes("World"));
+// console.log("slice ", STR.slice(0,5));
+// console.log("indexOf", STR.indexOf("java"));
+// console.log("replace", STR.replace("World","Pakistan"));
+// console.log("split — array mein todna ",STR.split(" "));
+// let word = "           hello   "
+// console.log("trim — spaces hatao ",word.trim());
+
+
+
+// Topic 4 — Math Object
+// let random = Math.floor(Math.random() * 10) + 1;
+// console.log(random);
+
+
+// SCOPE — variable kahan accessible hai
+
+// // Global Scope — poore code mein accessible
+// let globalVar = "Main global hun";
+
+// function testScope() {
+//     // Local Scope — sirf is function mein
+//     let localVar = "Main local hun";
+//     console.log(globalVar); // ✅ accessible
+//     console.log(localVar);  // ✅ accessible
 // }
 
-// new way — forEach
-fruits.forEach((fruit)=>{
-    console.log(fruit);
-})
+// testScope();
+// // console.log(localVar); // ❌ Error! bahar accessible nahi
+
+// // Block Scope — let/const sirf {} ke andar
+// if (true) {
+//     let blockVar = "Main block mein hun";
+//     console.log(blockVar); // ✅
+// }
+// // console.log(blockVar); // ❌ Error!
+
+// // HOISTING — var upar uth jaata hai
+// console.log(myVar); // undefined — error nahi ata!
+// var myVar = "hello";
+
+// // let/const hoist nahi hote properly
+// // console.log(myLet); // ❌ Error — ReferenceError
+// // let myLet = "hello";
+
+
+
+//  Topic 6 — Closures
+// Closure — function ke andar function
+// andar wala function bahar wale ka variable yaad rakhta hai
+
+// function counter() {
+//     let count = 0; // yeh variable closure mein band hai
+
+//     return function() {
+//         count++;
+//         console.log("Count:", count);
+//     };
+// }
+
+// const increment = counter();
+// increment(); // Count: 1
+// increment(); // Count: 2
+// increment(); // Count: 3
+
+
+// Bank 
+// function bankAccount(initialBalance){
+//     let balance = initialBalance;
+//     console.log(balance);
+    
+//     return {
+//         deposit : function (amount){
+//             balance += amount
+//             console.log(`Deposit: ${amount} | Balance: ${balance}`);
+//         },
+//         withdraw: function(amount){
+//            if (amount > balance){
+//              console.log("infussinat balance");
+//            }else{
+//              balance -= amount
+//             console.log(`WithDraw: ${amount} | Balance: ${balance}`);
+//            }
+//         }
+//     }
+    
+// }
+
+// let myAccount = bankAccount(100)
+// myAccount.deposit(100)
+// myAccount.withdraw(500)
+
+
+// Topic 7 — Error Handling (try/catch)
+// try{
+//     let obj = null
+//     console.log(obj.name);
+// }
+// catch(error){
+//    console.log(error.message);
+// }finally{
+//     console.log("good");
+    
+// }
+
+
+// // Custom Error throw karna
+// function deivide(a,b){
+//     if (b === 0){
+//         throw new Error("Zero Not Divieded y 10")
+//     }
+//     return a / b
+// }
+// try{
+//     console.log(deivide(10,0));
+// }catch(error){
+//     console.log(error.message);
+// }
+
+
+// Topic 8 — ES6+ Modern Features
+// 1. Optional Chaining ?.
+// const user = {
+//     name:"Muzaffar",
+//     address:{
+//         city:"karachi"
+//     }
+// };
+// console.log(user.address?.city);
+// console.log(user.phone?.number);
+
+
+
+// 2. Nullish Coalescing ??
+// let username = null;
+// console.log(username ?? "Guest");   // Guest
+// let loggedIn = "Muzaffar";
+// console.log(loggedIn ?? "Guest");   // Muzaffar
+
+
+
+//  3. Short Circuit Evaluation
+// let isLoggedIn = true;
+// isLoggedIn && console.log("Welcom");
+
+// let isAdmin = false
+// isAdmin || console.log("Acces Denai");
+
+// // 4. Array/Object Destructuring (recap)
+// const [first, , third] = [10, 20, 30];
+// console.log(first, third); // 10 30
+
+// const { name, age = 25 } = { name: "Sara" };
+// console.log(name, age); // Sara 25 (default value)
+
+

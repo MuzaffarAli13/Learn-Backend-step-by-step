@@ -162,4 +162,139 @@
 // // 0 matlab — sum ki starting value 0 hai
 
 
+// reduce 
+// let num = [1,2,3,4,5,6];
+// let total = num.reduce((sum,num)=> sum + num,0);
+// console.log(total);
+
+
 // 2. ES6+ Features
+// Object Destructuring
+// const person = { name: "Muzaffar", age: 20, city: "Ghotki" };
+// let {name:naam,age,city} = person;
+// console.log(naam,age,city);
+
+
+// Array Destructuring
+// const fruits = ["mango", "apple", "banana"];
+// const [first, second, third] = fruits;
+// console.log(first);  // mango
+// console.log(second); // apple
+
+
+// Spread Operator ... — array/object ko copy ya merge karo
+// Array copy karna
+
+// let arr1 = [1,2,3,4];
+// let arr2 = [...arr1,5,6];
+// console.log(arr2);
+
+
+// Object merge karna
+// const user     = { name: "Ali", age: 25 };
+// const extraInfo = { city: "Karachi", job: "Developer" };
+// const fullUser = {...user,...extraInfo};
+// console.log(fullUser);
+
+
+// Default Parameters — function mein default value dena
+// function greet(name="Guest"){
+//     return `Hello ${name}`;
+// };
+// console.log(greet());
+
+
+// Callback matlab — ek function jo doosre function ko argument ki tarah diya jaye.
+// function doTask(user,welcomMsg){ 
+//     console.log(user,"Login Succesfuly..");
+//     welcomMsg() 
+// }
+
+// function welcomMsg(){
+//     console.log("welcome to Admin Office");
+// };
+
+
+// doTask("Ali",welcomMsg)
+
+
+
+//  Promises — Async kaam ke liye
+// let order = new Promise((resolve,reject)=>{
+//    let orderPlaced = false;
+//    if(orderPlaced){
+//     resolve("Pizza Agya");
+//    }else {
+//     reject("Örder cancel...")
+//    }
+// })
+
+// order
+//   .then((res)=> console.log(res))
+//   .catch((error) => console.log(error))
+
+// let myPromise = new Promise((resolve,reject)=>{
+//     let succe = true;
+//     if(succe){
+//         resolve("Data mil gaya! ✅")
+//     }else{
+//         reject("Kuch ghalat ho gaya! ❌")
+//     }
+// })
+
+// myPromise
+//     .then((result)=>console.log(result))
+//     .catch((error)=>console.log(error))
+    
+
+// 5. Async / Await — Promise ka asaan tarika
+// function getUserData(){
+//     return new Promise((resolve)=>{
+//        setTimeout(()=>{
+//         resolve({name:"Muzaffar Ali",age:20})
+//        },2000)
+//     })
+// }
+
+// async function main() {
+//     console.log("Data load ho raha hai...");
+//     let data = await getUserData();
+//     console.log(`Name: ${data.name}`);
+//     console.log(`Age: ${data.age}`);
+// }
+
+// main()
+
+
+// Task
+// let numbers = [5, 12, 8, 130, 44];
+// let greaterTen = numbers.filter((num)=> num > 10);
+
+// const products = [
+//     { name: "Shirt",  price: 1000 },
+//     { name: "Pants",  price: 2000 },
+//     { name: "Shoes",  price: 3000 }
+// ]
+// let disCount = products.map((pro)=> pro.price * 0.90 );
+// console.log(disCount);
+
+// let total = products.reduce((sum,s)=> sum + s.price,0);
+// console.log(total);
+
+// function wait(second){
+//    return new Promise((resolve)=>{
+//     setTimeout(resolve, second * 1000)
+//    })
+// }
+
+// async function main(){
+//     console.log("order a rha h");
+//     await wait(1);
+//     console.log("order place ho gya");
+// };
+
+// main()
+
+
+
+
