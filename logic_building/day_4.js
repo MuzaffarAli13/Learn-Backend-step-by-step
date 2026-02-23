@@ -22,7 +22,6 @@ function countWord(str){
 };
 console.log(countWord("hello world from pakistan"));
 
-
 // 3. Title case "hello world" → "Hello World"
 
 // . String ko words mein todo (split by space)
@@ -43,6 +42,7 @@ function titleCase(str){
     
 }
 console.log(titleCase(str));
+
 
 
 
