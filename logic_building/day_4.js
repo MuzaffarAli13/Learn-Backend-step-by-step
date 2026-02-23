@@ -16,7 +16,7 @@ console.log(isPalindrome("Hello"));   // false ✅
 // 2. Count words in "hello world from pakistan" → 4
 function countWord(str){
     let word = str.trim();
-    if(word === "") return 0
+    // if(word === "") return 0
     let words = word.split(" ").filter((word)=> word !== "");
     return words.length;
 };
@@ -43,3 +43,50 @@ function titleCase(str){
     
 }
 console.log(titleCase(str));
+
+
+
+// 4. Longest word in sentence
+function longestWord(str){
+    let words = str.split(" ");
+    let longest = '';
+    for(let i=0; i < words.length; i++){
+        if(words[i].length > longest.length){
+            longest = words[i]
+        }
+    };
+    return longest
+};
+console.log(longestWord("hello world from pakistan"));
+
+
+
+// 5. Object manipulation (students data)
+let students = {
+    name: "Muzaffar",
+    obtainedMarks: 425,
+    totalMarks: 500
+};
+
+function persontage(std){
+    return (std.obtainedMarks / std.totalMarks) * 100
+};
+
+console.log(persontage(students));
+
+// Method 2 
+let student = [
+    { name: "Ali", obtained: 425, total: 500 },
+    { name: "Sara", obtained: 460, total: 500 },
+    { name: "Ahmed", obtained: 390, total: 500 }
+]
+
+function getpersontage(std){
+    for(let i=0; i < std.length; i++){
+        let persontage = (std[i].obtained / std[i].total) * 100
+        std[i].persontage = persontage
+    }
+    return std;
+}
+console.log(getpersontage(student));
+
