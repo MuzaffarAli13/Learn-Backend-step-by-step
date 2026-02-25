@@ -965,4 +965,33 @@ let dashes = "----------------------------";
 
 
 // Q6: Spread operator Objects mein 
-let person = {name:"Muzaffar",age:20};
+// let person = {name:"Muzaffar",age:20};
+
+// copy
+// let copy = {...person};
+// console.log(copy);
+
+// merge
+// let extra = {city:"ghtoki",rolln:2394};
+// let full = {...person,...extra};
+// console.log(full);
+
+// Q7: Object ke important built-in methods — Interview Favourite!
+// let person = { name: "Ali", age: 25, city: "Lahore" };
+// // Keys niklo
+// console.log(Object.keys(person));
+
+// // Values niklo
+// console.log(Object.values(person));
+
+// // Key-Value pairs nikalo
+// console.log(Object.entries(person));
+
+
+// Q8: Object loop kaise karein
+let person = { name: "Ali", age: 25 };
+
+// for in loop
+for(let key in person){
+    console.log(key, person[key]);
+}
