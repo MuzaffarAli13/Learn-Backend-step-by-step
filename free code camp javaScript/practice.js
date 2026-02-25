@@ -639,3 +639,184 @@ let dashes = "----------------------------";
 // main()
 
 
+
+
+
+// // String Methods
+// let str = "Muzaffar";
+// console.log(str.length);
+
+
+// let str = "Hello World";
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+
+// Trm
+// let str = "   remove space outside    ";
+// console.log(str.trim());
+
+
+// Includes
+// let str = "hello world";
+// console.log(str.includes("world")); // true
+// console.log(str.includes("World"));
+
+
+// index of
+// let str = "Hello world";
+// console.log(str.indexOf("world")); // 6 index
+// console.log(str.indexOf("xyz")); // -1 index
+
+
+// Slice
+// let str = "Hello world";
+// console.log(str.slice(0,5));
+// console.log(str.slice(6));
+// console.log(str.slice(-5));
+
+
+// Replace
+// let str = "cat cat cat";
+// console.log(str.replace("cat","dog"));
+
+//  Replace all
+// let str = "cat cat cat";
+// console.log(str.replaceAll("cat","dog"));
+
+
+// Split
+// let str = "Ali,Khan,Aftab";
+// console.log(str.split(","));
+
+// let str2 = "Hello";
+// console.log(str2.split(""));
+
+
+// Concat
+// let a = "hello";
+// let b = "world";
+// console.log(a.concat(" ",b));
+
+// // template litera
+// console.log(`${a} ${b}`);
+
+
+// charat   if i write 0 then retrun H
+// let str = "Hello world";
+// console.log(str.charAt(0));
+// console.log(str.charAt(-1)); // not response 
+// // at modern negative support
+
+// console.log(str.at(-1)); // d
+
+'use strict'
+// Q2: Interview Trap Question — String immutable hoti hai kya?
+// A: Haan! String immutable hoti hai JavaScript mein:
+// let str = "Hello";
+// str[0] = "J";
+// console.log(str);   // not change
+
+
+
+
+// String methods original string nahi badlte — hamesha nai string return karte hain.
+// let str = "Hello";
+// let newStr = str.toUpperCase();
+// console.log(str); 
+// console.log(newStr); 
+
+// let str = "cat-dog-bird-fish";
+// let arr = str.split("-");
+// let result = arr[arr.length - 1];
+// console.log(result);
+
+// functions
+// greet(); // hoist function
+// function greet(){
+//     console.log("Hello");
+// }
+// setTimeout(() => {
+//      console.log("wait");
+//      find();
+// }, 1000);
+
+// let find = function(){
+//     console.log("Hello find");
+// }
+
+
+
+//  Arrow Function mein kya special hai?
+// A: 3 cheezein —
+// 1. Short syntax:
+// Normal
+// const add = function(a,b){return a + b}
+
+// Arrow
+// const add = (a,b)=> a +b
+// console.log(add(1,2));
+
+//  Apna this nahi hota:
+
+// const person = {
+//   name: "Ali",
+//   greet: function() {
+//     console.log(this); // person object
+//     // console.log(this.name); // "Ali"
+//   },
+//   find:()=>{
+//     console.log(this.name);  // underfine
+//   }
+// };
+
+// person.greet();
+
+// Arrow sinle line
+// let sum = n => n + 12
+// console.log(sum(33));
+
+// Q7: Rest Parameters kya hote hain?
+// A: Jab pata na ho kitne arguments aayenge:
+// function sum(...nums){
+//     let total = nums.reduce((sum,num)=>sum + num,0)
+//     console.log(total);
+// }
+// sum(1,2,3,4,5)
+// ...numbers saare arguments ko array mein le leta hai!
+
+
+
+
+// Q8: Callback Function kya hota hai?
+// A:Ek function jo doosre function ko argument ki tarah diya jaye:
+// function loggedIn(welcom){
+//     console.log("User Logged In");
+//     welcom()
+// };
+// function welcom(){
+//     console.log("welcome back!");
+// }
+// loggedIn(welcom)
+
+// setTimeout(() => {
+//   console.log("2 second baad chala!"); // yeh bhi callback hai!
+// }, 2000);
+
+
+// const person = {
+//   name: "Ali",
+//   greet: function() {
+//     return this.name;
+//   }
+// };
+
+// const fn = person.greet;
+// console.log(fn()); // undefined
+
+
+// function add(a, b) {
+//   return a + b;
+// }
+
+// console.log(add(2, 3) * 10);
+// const add = (a, b) => a + b;
