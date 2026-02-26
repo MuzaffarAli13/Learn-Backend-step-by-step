@@ -1146,36 +1146,134 @@ let dashes = "----------------------------";
 
 
 // users
-let users = [
-  {name:"Muzaffar",age:20,id:1},
-  {name:"Al",age:18,id:2},
-  {name:"Khan",age:19,id:3},
-  {name:"Nafay",age:7,id:4},
-];
+// let users = [
+//   {name:"Muzaffar",age:20,id:1},
+//   {name:"Al",age:18,id:2},
+//   {name:"Khan",age:19,id:3},
+//   {name:"Nafay",age:7,id:4},
+// ];
 
-function getUsers(id){
-  return new Promise((resolve,reject)=>{
-    setTimeout(() => {
-    for(let i=0; i < users.length; i++){
-    if(id === users[i].id){
-      return resolve(users[i])
-    }
-  }
-   return "User Not Found..."
-  }, 2000);
-  })
-}
+// function getUsers(id){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//     for(let i=0; i < users.length; i++){
+//     if(id === users[i].id){
+//       return resolve(users[i])
+//     }
+//   }
+//    return "User Not Found..."
+//   }, 2000);
+//   })
+// }
 
-async function fetchUser(id) {
-    try {
-      let user = await getUsers(id)
-      console.log(user);
-    } catch (error) {
-       console.log(error.message);
-    }
-}
+// async function fetchUser(id) {
+//     try {
+//       let user = await getUsers(id)
+//       console.log(user);
+//     } catch (error) {
+//        console.log(error.message);
+//     }
+// }
 
-fetchUser(1); // { name: "Muzaffar", age: 20, id: 1 } ✅
-fetchUser(2); // { name: "Al", age: 18, id: 2 } ✅
-fetchUser(4); // { name: "Nafay", age: 7, id: 4 } ✅
-fetchUser(9); // "User Not Found..." ✅
+// fetchUser(1); // { name: "Muzaffar", age: 20, id: 1 } ✅
+// fetchUser(2); // { name: "Al", age: 18, id: 2 } ✅
+// fetchUser(4); // { name: "Nafay", age: 7, id: 4 } ✅
+// fetchUser(9); // "User Not Found..." ✅
+
+// Q1: Closure kya hota hai?
+// Closure tab banta hai jab ek function apne bahar ki variables yaad rakhta hai — chahe woh function baad mein kisi aur jagah se call ho!
+
+// function outer(){
+//   let name = "Ali";
+
+//   function inner(){
+//     console.log(name);
+//   };
+//   return inner;
+
+// }
+// let fn = outer()
+// fn()
+
+// Real life Example
+// function counter(){
+//   let count = 0
+//   return {
+//     increament(){count++},
+//     decreament(){count--},
+//     getCount(){return count}
+//   }
+// };
+// let c = counter();
+// console.log(c.getCount());
+// c.increament()
+// c.increament()
+// c.increament();
+// // c.decreament();
+// console.log(c.getCount());
+
+// // Q4: Closure kahan use hota hai?
+// function bankAccount(balance){
+//   return{
+//     deposit(ammout){balance += ammout},
+//     withdrw(ammout){balance -= ammout},
+//     getBalance(){return balance}
+//   }
+// };
+// let myAccount = bankAccount(1000)
+// console.log(myAccount.getBalance());
+// myAccount.deposit(2000)
+// // myAccount.deposit(2000)
+// // myAccount.deposit(1000)
+// console.log(myAccount.getBalance());
+
+
+// function outer() {
+//   let count = 0;
+
+//   return function() {
+//     count++;
+//     return count;
+//   };
+// }
+
+// let fn1 = outer();
+// let fn2 = outer();
+
+// console.log(fn1());
+// console.log(fn1());
+// console.log(fn2());
+
+// function multiply(x) {
+//   return (y) => x * y;
+// }
+
+// let double = multiply(2);
+// let triple = multiply(3);
+
+// console.log(double(5));
+// console.log(triple(5));
+
+
+// for(var i = 0; i < 3; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 1000);
+// }
+
+
+// Hoisting
+// console.log(name);
+// const name = "Muzaffar ALi";
+// console.log(name);
+// gree("khan")
+// function gree(name){
+//   console.log("hello " + name);
+// }
+
+// let greet = function(){
+//   console.log("Hello");
+// }
+
+// greet()
+
