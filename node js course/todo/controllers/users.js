@@ -1,5 +1,9 @@
 import { users } from "../lib/data.js"
 
+
+export const home = (req,res)=>{
+      res.send("Home Page!")
+}
 export const getAllUsers = (req,res)=>{
     res.status(200).json(users)
 };
