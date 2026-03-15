@@ -47,7 +47,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected! ✅"))
   .catch(err => console.log("Error:", err));
 
-// CREATE — Naya user
+// CREATE — 
 app.post("/users", async (req, res) => {
   try {
     let user = new User(req.body);
@@ -58,7 +58,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
-// READ — Sare users
+// READ — 
 app.get("/users", async (req, res) => {
   try {
     let users = await User.find();
