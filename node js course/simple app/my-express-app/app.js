@@ -1,127 +1,127 @@
-import express from "express";
-import bodyparser from "body-parser"
-import router from "./router/user.routes";
+// import express from "express";
+// import bodyparser from "body-parser"
+// import router from "./router/user.routes";
 
-const app = express();
+// const app = express();
 
 
-app.use(express.json())
-app.use(bodyparser.urlencoded({extended:true}))
+// app.use(express.json())
+// app.use(bodyparser.urlencoded({extended:true}))
 
-let users = [
-    {
-        fullname:"khan",
-        id:1
-    }
-];
+// let users = [
+//     {
+//         fullname:"khan",
+//         id:1
+//     }
+// ];
 
-// welcome
-app.use("/",router)
-// start structure well define
-// get all users
-app.get("/api/v1/user",(req,res)=>{
-    return res.status(200).json({
-       succues:true,
-       data: users || []
-    })
-})
+// // welcome
+// app.use("/",router)
 
-//  Bhagban flim 
+// // get all users
+// app.get("/api/v1/user",(req,res)=>{
+//     return res.status(200).json({
+//        succues:true,
+//        data: users || []
+//     })
+// })
 
-// get one user
-app.get("/api/v1/user/:id",(req,res)=>{
-    let id = parseInt(req.params.id,10);
-     // Validate ID
-     if(isNaN(id)){
-        return res.status(400).json({
-            succuess:false,
-            message:"Invalid User ID"
-        })
-     }
-    let user = users.find((u)=> u.id === id);
-    if(!user){
-        return res.status(404).json({
-            succuess:false,
-            message:"User Not Found!"
-        })
-    };
+// //  Bhagban flim 
 
-    return res.status(200).json({
-        succuess:true,
-        user
-    })
-})
-//  Create user
-app.post("/api/v1/user",(req,res)=>{
-  let {fullname,email,password} = req.body;
- if(!fullname || !email || !password){
-    return res.status(404).json({
-        succues:false,
-        message:"All fileds are requird!"
-    })
- }
-  res.status(200).json({
-    "message":"User Created Succuesfuly"
-  })
-});
+// // get one user
+// app.get("/api/v1/user/:id",(req,res)=>{
+//     let id = parseInt(req.params.id,10);
+//      // Validate ID
+//      if(isNaN(id)){
+//         return res.status(400).json({
+//             succuess:false,
+//             message:"Invalid User ID"
+//         })
+//      }
+//     let user = users.find((u)=> u.id === id);
+//     if(!user){
+//         return res.status(404).json({
+//             succuess:false,
+//             message:"User Not Found!"
+//         })
+//     };
 
-// Update user
-app.put("/api/v1/user/:id", (req, res) => {
-    const id = parseInt(req.params.id, 10);
+//     return res.status(200).json({
+//         succuess:true,
+//         user
+//     })
+// })
+// //  Create user
+// app.post("/api/v1/user",(req,res)=>{
+//   let {fullname,email,password} = req.body;
+//  if(!fullname || !email || !password){
+//     return res.status(404).json({
+//         succues:false,
+//         message:"All fileds are requird!"
+//     })
+//  }
+//   res.status(200).json({
+//     "message":"User Created Succuesfuly"
+//   })
+// });
 
-    // Validate ID
-    if (isNaN(id)) {
-        return res.status(400).json({
-            success: false,
-            message: "Invalid ID"
-        });
-    }
+// // Update user
+// app.put("/api/v1/user/:id", (req, res) => {
+//     const id = parseInt(req.params.id, 10);
 
-    const user = users.find((u) => u.id === id);
+//     // Validate ID
+//     if (isNaN(id)) {
+//         return res.status(400).json({
+//             success: false,
+//             message: "Invalid ID"
+//         });
+//     }
 
-    if (!user) {
-        return res.status(404).json({
-            success: false,
-            message: "User not found"
-        });
-    }
+//     const user = users.find((u) => u.id === id);
 
-    // Update fields (partial update)
-    user.fullname = req.body.fullname || user.fullname;
-    // user.id = req.body.id || user.id;
+//     if (!user) {
+//         return res.status(404).json({
+//             success: false,
+//             message: "User not found"
+//         });
+//     }
 
-    return res.status(200).json({
-        success: true,
-        message: "User updated successfully",
-        data: user
-    });
-});
+//     // Update fields (partial update)
+//     user.fullname = req.body.fullname || user.fullname;
+//     // user.id = req.body.id || user.id;
 
-// Delete user
-app.delete("/api/v1/user/:id",(req,res)=>{
-    let id = parseInt(req.params.id);
-    if(isNaN(id)){
-        return res.status(400).json({
-            success:false,
-            message:"Invalid Id"
-        })
-    }
-    let user = users.find((u)=>u.id === id);
-    if(!user){
-        return res.status(404).json({
-            success:false,
-            message:"User not Found"
-        });
-    }
-    users = users.filter((u)=>u.id !== id)
-    return res.status(200).json({
-        success:true,
-        message:"user Deleted ",
+//     return res.status(200).json({
+//         success: true,
+//         message: "User updated successfully",
+//         data: user
+//     });
+// });
+
+// // Delete user
+// app.delete("/api/v1/user/:id",(req,res)=>{
+//     let id = parseInt(req.params.id);
+//     if(isNaN(id)){
+//         return res.status(400).json({
+//             success:false,
+//             message:"Invalid Id"
+//         })
+//     }
+//     let user = users.find((u)=>u.id === id);
+//     if(!user){
+//         return res.status(404).json({
+//             success:false,
+//             message:"User not Found"
+//         });
+//     }
+//     users = users.filter((u)=>u.id !== id)
+//     return res.status(200).json({
+//         success:true,
+//         message:"user Deleted ",
         
-    })
-})
+//     })
+// })
 
 
-app.listen(5000, () => {
-    console.log("Server running at http://localhost:5000");
-});
+// app.listen(5000, () => {
+//     console.log("Server running at http://localhost:5000");
+// });
