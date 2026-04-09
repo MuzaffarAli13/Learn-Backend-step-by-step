@@ -18,7 +18,7 @@ const server = http.createServer((req,res)=>{
     }else if(req.url === "/user"){
         res.writeHead(200,{"content-type":"application/json"});
         res.end(JSON.stringify({succes:true,message:"user 1"}))
-    } 
+    }
     else{
         res.writeHead(404,{"content-type":"application/json"});
         res.end(JSON.stringify({succes:false,message:"Not Found.."}))

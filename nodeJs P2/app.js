@@ -13,6 +13,10 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use('/api/v1/user',userRoute)
+app.get("/data",(req,res)=>{
+    res.status(200).json({"message":"done"})
+})
+
 
 
 app.listen(PORT,()=>{
