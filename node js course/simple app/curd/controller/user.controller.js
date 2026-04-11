@@ -1,4 +1,5 @@
 import User from "../models/user.models.js"
+import bcrypt from "bcryptjs";
 
 export const welCome = (req,res)=>{
     res.json({
@@ -12,13 +13,26 @@ export const welCome = (req,res)=>{
 export const createUser = async (req,res)=>{
     try{
         let {fullName,email,password} = req.body;
+
         if(!fullName || !email || !password){
              return res.status(400).json({
                 success:false,
                 message:"All fields Required!"
             });
         };
-        let user = await User.create({fullName,email,password});
+        // check user with email
+        let exiit = await User.findOne({ email });
+        if(exiit){
+            return res.status(400).json({
+                success:false,
+                message:"User Already Exist.."
+            })
+        };
+  
+        // hashed password
+        let hashedPassword = await bcrypt.hash(password,10)
+
+        let user = await User.create({fullName,email,password:hashedPassword});
         return res.json({
             success:true,
             message:"User Created!..",
