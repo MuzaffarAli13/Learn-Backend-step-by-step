@@ -38,6 +38,8 @@ export const register = async (req,res)=>{
 // User Login
 export const userLoggedIn = async (req,res)=>{
     try{
+       console.log(req);
+        
       let {email,password} = req.body;
       if(!email || !password){
         return res.status(400).json({
