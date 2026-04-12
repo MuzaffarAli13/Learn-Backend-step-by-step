@@ -1,0 +1,57 @@
+import { Todo } from "../models/todo.js";
+
+export const createTodo = async (req,res)=>{
+    try{
+      let {title,description} = req.body;
+      if(!title || !description){
+        return res.status(401).json({
+            succuss:false,
+            message:"All field are Required!"
+        });
+      };
+    //   let toDO = await Todo.create({
+    //     title,
+    //     description
+    //   });
+      let newtodo = new Todo({
+        title,
+        description
+      });
+      newtodo.save()
+      res.json({
+        succuss:true,
+        message:"Task Created!",
+        data:newtodo
+      });
+    }catch(error){
+        console.log(error.message);
+    }
+};
+
+export const getAllTodos = async (req,res)=>{
+   try {
+     const todos = await Todo.find();
+     return res.json({
+        succuss:true,
+        message:todos.length === 0 ? "Todos Not Found!" : "Data Fetched!",
+        data: todos.length === 0 ? [] : todos
+    });
+
+   } catch (error) {
+    console.log(error.message);
+   }
+};
+
+// Update Todo coming soon 
+export const updateTodo = async (req,res)=>{
+    try {
+        const todo = await Todo.findByIdAndUpdate(
+            req.params,
+            req.body,
+            {new:true}
+        );
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
